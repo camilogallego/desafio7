@@ -11,16 +11,18 @@ const server = app.listen(PORT, () => {
 server.on("error", (error) => console.log("Error en servidor", error));
 
 app.get("/items", (req, res) => {
-  visitas.ruta1 = +1;
+  visitas.ruta1 = ++visitas.ruta1;
   const data = fs.readFileSync("./productos.txt",'utf-8');
-  console.log(data);
   let obj = JSON.parse(data)
-  res.send({ items: obj.title, cantidad: obj.length });
+  res.json({ items: obj, cantidad: obj.length });
 });
 
 app.get("/items-random", (req, res) => {
-  visitas.ruta2 = +1;
-  res.send();
+  visitas.ruta2 = ++visitas.ruta2;
+  const data = fs.readFileSync("./productos.txt",'utf-8');
+  let obj = JSON.parse(data)
+  let ram = obj[Math.floor(Math.random()*obj.length)]
+  res.send({item:ram});
 });
 
 app.get("/visitas", (req, res) => {

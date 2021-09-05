@@ -2,19 +2,19 @@
     {
         "title":"carro",
         "prices": 900,
-        "thumbnail": "foto"
+        "thumbnail": "foto",
         "id":1
     },
     {
         "title":"moto",
         "prices": 600,
-        "thumbnail": "foto"
+        "thumbnail": "foto",
         "id":2
     },
     {
         "title":"bici",
         "prices": 200,
-        "thumbnail": "foto"
+        "thumbnail": "foto",
         "id":3
     }
 ]
